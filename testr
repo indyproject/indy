@@ -1,0 +1,5 @@
+#!/usr/local/bin/python
+
+import os, sys
+
+print("Welcome in indy")
