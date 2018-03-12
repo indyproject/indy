@@ -9,6 +9,9 @@ parser = argparse.ArgumentParser(description='A python app to archive')
 parser.add_argument("-s", "--strip",
                     help="path to strip when archiving")
 
+parser.add_argument("-n", "--name", default="indy",
+                    help="name of archive")
+
 args = parser.parse_args()
 
 print("Welcome in indy")
@@ -18,7 +21,7 @@ commitedFiles = commitedFiles.decode()
 commitedFiles = commitedFiles.strip().split('\n')
 print(commitedFiles)
 
-with tarfile.open("indy.tar", "w") as tar:
+with tarfile.open(args.name + ".tar.gz", "w:gz") as tar:
     for name in commitedFiles:
         if args.strip:
             print("Stripping :" + args.strip)

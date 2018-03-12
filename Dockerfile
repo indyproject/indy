@@ -12,3 +12,4 @@ COPY indy /usr/local/bin/
 USER 1000:1000
 
 ENTRYPOINT [ "indy" ]
+CMD ["--help"]
